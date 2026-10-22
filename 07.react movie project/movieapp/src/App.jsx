@@ -73,7 +73,7 @@ function App() {
           <Row className="g-4 ">
             {favourites.map((movie) => (
               <Col key={movie.id} xs={12} sm={6} lg={4}>
-                <Favorite movie={movie} style={{ height: '50%' }} />
+                <Favorite movie={movie} style={{ height: '50%' }} onFavouriteClick={handleFavouriteClick} />
               </Col>
             ))}
           </Row>
