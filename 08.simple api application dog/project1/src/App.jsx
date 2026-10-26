@@ -6,9 +6,9 @@ function App() {
   const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
-    fetch("https://dog.ceo/api/breeds/image/random/10")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
       .then((response) => response.json())
-      .then((data) => setDogs(data.message));
+      .then((data) => setDogs(data.results));
 
     }, []);
 
