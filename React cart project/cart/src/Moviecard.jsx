@@ -28,7 +28,7 @@ const Moviecard = ({ category, onClick }) => {
         }
       })
       .catch((error) => console.log(error));
-  }, [category.slug]);
+  }, [category.slug]); 
 
   return (
     <MDBCard onClick={onClick} className="category-card">

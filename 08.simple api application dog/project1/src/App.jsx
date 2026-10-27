@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Imagecard from "./Imagecard";
 
@@ -6,21 +5,23 @@ function App() {
   const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
+    fetch("https://dog.ceo/api/breeds/image/random/10")
       .then((response) => response.json())
-      .then((data) => setDogs(data.results));
-
-    }, []);
+      .then((data) => setDogs(data.message))
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <div>
       <h1>Dog Gallery</h1>
 
-      <div className="dog-gallery">
-        {dogs.map((dog, index) => (
-          <Imagecard key={index} img={dog} />
-        ))}
-      </div>
+      {dogs.map((dog, index) => (
+        <Imagecard
+         
+          src={dog}
+          
+        />
+      ))}
     </div>
   );
 }
